@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.dev.tools.ksp)
     id(libs.plugins.dagger.hilt.android.get().pluginId)
-    id("com.google.gms.google-services")
+    alias(libs.plugins.google.services)
     id("kotlin-kapt")
 }
 
@@ -116,12 +116,11 @@ dependencies {
     implementation(libs.firebase.firestore)
 
     // glide
-    implementation("com.github.bumptech.glide:glide:4.11.0")
-    implementation("com.github.bumptech.glide:okhttp3-integration:4.11.0")
-    kapt("com.github.bumptech.glide:compiler:4.11.0")
+    implementation(libs.glide)
+    implementation(libs.glide.okhttp)
+    kapt(libs.glide.compiler)
 
-    implementation("androidx.viewpager2:viewpager2:1.0.0")
-
-    implementation("org.osmdroid:osmdroid-android:6.1.10")
+    // maps
+    implementation(libs.osmdroid)
 
 }

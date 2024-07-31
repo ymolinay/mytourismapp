@@ -23,6 +23,9 @@ fragment-ktx = "1.5.2"
 fragmentnavigation = "2.3.5"
 navigation-ktx = "2.3.5"
 firebaseBom = "33.1.2"
+glide = "4.11.0"
+viewpager = "1.0.0"
+osmdroid = "6.1.10"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -33,6 +36,7 @@ material = { module = "com.google.android.material:material", version.ref = "mat
 constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 fragment-navigation = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "fragmentnavigation" }
 navigation-kotlin = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation-ktx" }
+viewpager = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager" }
 
 # test
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -59,6 +63,14 @@ firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
 # cryto
 crypto = { module = "androidx.security:security-crypto", version.ref = "crypto" }
 
+# glide
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+glide-okhttp = { module = "com.github.bumptech.glide:okhttp3-integration", version.ref = "glide" }
+glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
+
+# maps
+osmdroid = { module = "org.osmdroid:osmdroid-android", version.ref = "osmdroid" }
+
 # mockito
 mockito = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 mockitoAndroid = { module = "org.mockito:mockito-android", version.ref = "mockito" }
@@ -73,4 +85,4 @@ dev-tools-ksp = { id = "com.google.devtools.ksp", version.ref = "devToolsKsp" }
 google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
 
 [bundles]
-views = ["material", "constraintlayout", "fragment-navigation", "navigation-kotlin"]
+views = ["material", "constraintlayout", "fragment-navigation", "navigation-kotlin", "viewpager"]
