@@ -17,6 +17,7 @@ coroutineTest = "1.6.4"
 appcompat = "1.7.0"
 material = "1.12.0"
 constraintlayout = "2.1.4"
+lifecycle-vm = "2.5.1"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -35,6 +36,7 @@ coroutineTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", vers
 # hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
+lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle-vm" }
 
 # retrofit
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
