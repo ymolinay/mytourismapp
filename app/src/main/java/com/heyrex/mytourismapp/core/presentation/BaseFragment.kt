@@ -27,7 +27,6 @@ abstract class BaseFragment<S>(layout: Int) : Fragment(layout) {
         super.onViewCreated(view, savedInstanceState)
         viewModel().apply {
             viewState.observe(viewLifecycleOwner) { manageViewState(it) }
-            initViewModel(arguments)
         }
     }
 
