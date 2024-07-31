@@ -1,5 +1,7 @@
 package com.heyrex.mytourismapp.core.extensions
 
+import android.content.Context
+import android.util.DisplayMetrics
 import com.heyrex.mytourismapp.BuildConfig
 
 fun getAppVersion(): String {
@@ -20,4 +22,8 @@ fun storeVersionIsGreaterThanAppVersion(serverVersion: String, appVersion: Strin
         }
     }
     return serverVersionSplit.size > appVersionSplit.size
+}
+
+fun Int.toPx(context: Context): Int {
+    return this * (context.resources.displayMetrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT)
 }

@@ -21,4 +21,78 @@
         <item name="android:fontFamily">@font/light</item>
     </style>
 
+    <style name="ToolbarTheme" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:fontFamily">@font/bold</item>
+        <item name="titleTextColor">?attr/colorPrimary</item>
+        <item name="subtitleTextColor">?attr/colorPrimary</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
+    </style>
+
+    <style name="ToolbarTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:fontFamily">@font/bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="CarteroRegular.Size10">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="CarteroRegular.Size12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CarteroRegular.Size13">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="CarteroRegular.Size14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CarteroRegular.Size15">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="CarteroRegular.Size16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="CarteroLight.Size12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CarteroLight.Size13">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="CarteroLight.Size14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CarteroLight.Size16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="CarteroBold.Size10">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="CarteroBold.Size12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CarteroBold.Size13">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="CarteroBold.Size14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CarteroBold.Size16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>
