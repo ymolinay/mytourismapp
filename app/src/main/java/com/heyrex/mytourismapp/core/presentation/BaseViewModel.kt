@@ -1,5 +1,7 @@
 package com.heyrex.mytourismapp.core.presentation
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -61,5 +63,9 @@ abstract class BaseViewModel<S> : ViewModel() {
 
     fun navigate(navResId: Int, bundle: Bundle? = null) {
         viewState.value = ViewModelState.Navigate(navResId, bundle)
+    }
+
+    fun goIntent(intent: Activity) {
+        viewState.value = ViewModelState.GoIntent(intent)
     }
 }

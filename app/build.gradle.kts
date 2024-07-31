@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.dev.tools.ksp)
     id(libs.plugins.dagger.hilt.android.get().pluginId)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -14,7 +15,7 @@ android {
         minSdk = 24
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "2.0.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -49,6 +50,27 @@ android {
         }
     }
 
+    flavorDimensions("environment")
+
+    productFlavors {
+        create("dev") {
+            dimension = "environment"
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dev"
+            resValue("string", "app_name", "MyTourismApp (DEV)")
+        }
+        create("qa") {
+            dimension = "environment"
+            applicationIdSuffix = ".qa"
+            versionNameSuffix = "-qa"
+            resValue("string", "app_name", "MyTourismApp (QA)")
+        }
+        create("pro") {
+            dimension = "environment"
+            resValue("string", "app_name", "MyTourismApp")
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -77,12 +99,7 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.crypto)
     implementation(libs.lifecycle.viewmodel)
-
-
-//    implementation "com.google.dagger:hilt-android:<version>"
-//    kapt "com.google.dagger:hilt-android-compiler:<version>"
-//    implementation "androidx.hilt:hilt-lifecycle-viewmodel:<version>"
-//    kapt "androidx.hilt:hilt-compiler:<version>"
+    implementation(libs.fragment.kotlin)
 
     // Test mockito
     testImplementation(libs.mockito)
@@ -93,8 +110,7 @@ dependencies {
     testImplementation(libs.mockk)
     testImplementation(libs.coroutineTest)
 
-    implementation("androidx.fragment:fragment-ktx:1.5.2")
-
-    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
-    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.firestore)
 }

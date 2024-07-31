@@ -6,4 +6,19 @@
     </style>
 
     <style name="Theme.MyTourismApp" parent="Base.Theme.MyTourismApp" />
+
+    <style name="CarteroRegular">
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:lineSpacingExtra">6dp</item>
+    </style>
+
+    <style name="CarteroBold">
+        <item name="android:fontFamily">@font/bold</item>
+        <item name="android:lineSpacingExtra">6dp</item>
+    </style>
+
+    <style name="CarteroLight">
+        <item name="android:fontFamily">@font/light</item>
+    </style>
+
 </resources>

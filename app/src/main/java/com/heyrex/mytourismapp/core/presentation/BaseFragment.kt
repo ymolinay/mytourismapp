@@ -43,6 +43,8 @@ abstract class BaseFragment<S>(layout: Int) : Fragment(layout) {
                     viewModelState.bundle
                 )
 
+                is ViewModelState.GoIntent -> {}
+
                 else -> onUpdateState((viewModelState as ViewModelState.Loaded).value)
             }
         }

@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "852502192923",
+    "project_id": "retostecnicos",
+    "storage_bucket": "retostecnicos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852502192923:android:794571bfe876edb2aea9be",
+        "android_client_info": {
+          "package_name": "com.heyrex.mytourismapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAzRbNabktv80oa6ygdl1TY_GLc3g6B6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852502192923:android:82c486bb3693d1b1aea9be",
+        "android_client_info": {
+          "package_name": "com.heyrex.mytourismapp.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAzRbNabktv80oa6ygdl1TY_GLc3g6B6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852502192923:android:cf2711894ca66ad3aea9be",
+        "android_client_info": {
+          "package_name": "com.heyrex.mytourismapp.qa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAzRbNabktv80oa6ygdl1TY_GLc3g6B6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
