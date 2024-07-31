@@ -120,4 +120,8 @@ dependencies {
     implementation("com.github.bumptech.glide:okhttp3-integration:4.11.0")
     kapt("com.github.bumptech.glide:compiler:4.11.0")
 
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+
+    implementation("org.osmdroid:osmdroid-android:6.1.10")
+
 }
