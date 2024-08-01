@@ -6,6 +6,9 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
+import androidx.viewpager2.widget.ViewPager2
 import com.heyrex.mytourismapp.R
 import com.heyrex.mytourismapp.core.extensions.loadImage
 import com.heyrex.mytourismapp.core.presentation.BaseFragment
@@ -16,6 +19,7 @@ import org.osmdroid.config.Configuration
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
+import kotlin.math.abs
 
 @AndroidEntryPoint
 class DetailFragment : BaseFragment<DetailState>(R.layout.fragment_detail) {
@@ -40,23 +44,15 @@ class DetailFragment : BaseFragment<DetailState>(R.layout.fragment_detail) {
                 clipToPadding = false
                 clipChildren = false
                 offscreenPageLimit = 2
-                getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+                (getChildAt(0) as RecyclerView).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
 
-                val pageMarginPx = resources.getDimensionPixelOffset(R.dimen.page_margin)
-                val offsetPx = resources.getDimensionPixelOffset(R.dimen.offset)
-                setPageTransformer { page, position ->
-                    val offset = position * -(2 * offsetPx + pageMarginPx)
-                    if (position < -1) {
-                        page.translationX = -offset
-                    } else if (position <= 1) {
-                        val scaleFactor = 0.85f + (1 - Math.abs(position)) * 0.15f
-                        page.translationX = offset
-                        page.scaleY = scaleFactor
-                        page.alpha = 1f + (scaleFactor - 0.85f) / 0.15f * 0.5f
-                    } else {
-                        page.translationX = offset
-                    }
+                val compositePageTransformer = CompositePageTransformer()
+                compositePageTransformer.addTransformer(MarginPageTransformer(10))
+                compositePageTransformer.addTransformer { page, position ->
+                    val scaleFactor = 0.85f + (1 - abs(position)) * 0.15f
+                    page.scaleY = scaleFactor
                 }
+                setPageTransformer(compositePageTransformer)
             }
 
             activity?.apply {
