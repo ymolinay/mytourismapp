@@ -7,19 +7,28 @@ import okhttp3.ResponseBody
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
+/**
+ * Fábrica de errores para manejar diferentes tipos de fallos en solicitudes.
+ *
+ * @param R El tipo de datos para el resultado de error.
+ */
 open class  FailureFactory <R> {
+
+    // Maneja códigos de error y crea resultados de fallo.
     open fun handleCode(code: Int, errorBody: ResponseBody?) =
         Result.failure<R>(when (code) {
             400 -> createApiError(errorBody)
             else -> RequestFailure.ApiError()
         })
 
+    // Maneja excepciones y crea resultados de fallo.
     open fun handleException(exception: Throwable) =
         Result.failure<R>(when (exception) {
             is UnknownHostException, is SocketTimeoutException -> RequestFailure.NoConnectionError
             else -> RequestFailure.UnknownError
         })
 
+    // Crea un error de API a partir del cuerpo de la respuesta.
     private fun createApiError(responseBody: ResponseBody?): RequestFailure.ApiError {
         val newLine = "\n"
         try {
